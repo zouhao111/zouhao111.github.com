@@ -1,5 +1,4 @@
 ---
 layout: home
-published: false
 ---
 
