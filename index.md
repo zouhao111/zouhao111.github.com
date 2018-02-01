@@ -48,9 +48,7 @@ layout: home
         if(this.value.toLowerCase()==""){archive[i].closest('li').style.display = 'none';}
 
     }
-    if(e.keyCode == 13){
-       
-    }
+    
 })
 
 </script>
