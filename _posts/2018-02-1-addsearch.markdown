@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "search 功能"
+title:  "search功能"
 date:   2018-02-01 15:03:20 +0800
 categories: jekyll update
 ---
