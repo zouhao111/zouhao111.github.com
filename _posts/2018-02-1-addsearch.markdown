@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "第一篇博客"
+title:  "search 功能"
 date:   2018-02-01 15:03:20 +0800
 categories: jekyll update
 ---
