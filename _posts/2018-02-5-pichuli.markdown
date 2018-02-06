@@ -32,28 +32,28 @@ categories: jekyll update
 	<p>把文件夹中需要复制的文件就复制到了for循环的文件夹中了</p>
 	<h4>3.批量修改文件内容</h4>
 	{% highlight ruby %}
-for /L %%i in (1 1 334) Do (
-@echo off&setlocal enabledelayedexpansion
-(for /f "tokens=1-2* delims==" %%a in (.\%%i\Sysconfig.ini) do (
-if "%%b"=="" (echo %%a) else (
-if "%%a"=="num" (
-set "num=%%b"
-set /a num=%%i
-echo %%a=%%i
-) else (
-if "%%a"=="id" (
-set "id=%%b"
+	for /L %%i in (1 1 334) Do (
+	@echo off&setlocal enabledelayedexpansion
+	(for /f "tokens=1-2* delims==" %%a in (.\%%i\Sysconfig.ini) do (
+	if "%%b"=="" (echo %%a) else (
+	if "%%a"=="num" (
+	set "num=%%b"
+	set /a num=%%i
+	echo %%a=%%i
+	) else (
+	if "%%a"=="id" (
+	set "id=%%b"
 
-set /a id=id+%%i
-echo %%a=!id!
-) else (
-echo %%a=%%b
-)
-)
-)
-)) > #
-move # .\%%i\Sysconfig.ini
-)
+	set /a id=id+%%i
+	echo %%a=!id!
+	) else (
+	echo %%a=%%b
+	)
+	)
+	)
+	)) > #
+	move # .\%%i\Sysconfig.ini
+	)
 	{% endhighlight %}
 	<p>tokens=1-2* delims==是一行一行取，以‘=’划分，依次填入a，b，c...</p>
 	<p>echo 后面是换成的东西</p>
