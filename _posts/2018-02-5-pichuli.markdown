@@ -56,5 +56,8 @@ categories: jekyll update
 	{% endhighlight %}
 	<p>tokens=1-2* delims==是一行一行取，以‘=’划分，依次填入a，b，c...</p>
 	<p>echo 后面是换成的东西</p>
-	<img src="/resouse/img/pichuli/timg3.jpg">
+	<h4>效果图</h4>
+	<img src="/resouse/img/pichuli/1.jpg"><br>
+	<img src="/resouse/img/pichuli/2.jpg"><br>
+	<img src="/resouse/img/pichuli/3.jpg">
 </div>
