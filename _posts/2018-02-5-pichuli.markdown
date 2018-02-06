@@ -1,7 +1,35 @@
 ---
 layout: post
-title:  "search功能"
-date:   2018-02-01 15:03:20 +0800
+title:  "window系统下批处理文件"
+date:   2018-02-05 15:03:20 +0800
 categories: jekyll update
 ---
-   新加了搜索功能，不过暂时就写了两篇，搜索还没什么用。
+<div>
+	<h3>window下批处理文件，很少用，但是用到时很有用。</h3>
+	<h4>1.批量生成文件</h4>
+	{% highlight ruby %}
+	  MD 1 2 3....
+	{% endhighlight %}
+	<p>以.bat文件的方式放在你需要生成的目录上双击运行</p>
+	<p>数据有规律可以用WPS表格生成下</p>
+	<h4>1.批量复制文件</h4>
+	{% highlight ruby %}
+	  @Echo Off
+	Setlocal EnableDelayedExpansion
+	::CODER BY aiwozhonghuaba BY iBAT 1.6
+	Echo 正在处理中...
+	For /L %%i in (2 1 1000) Do (
+    Set Str=%%i
+ 	Copy /Y .\1\FrmClient.exe .\!Str:~-4!\FrmClient.exe >nul 2>nul   
+ 	Copy /Y .\1\point.db .\!Str:~-4!\point.db >nul 2>nul   
+ 	Copy /Y .\1\Sysconfig.ini .\!Str:~-4!\Sysconfig.ini >nul 2>nul   
+	Copy /Y .\1\System.Data.SQLite.dll  .\!Str:~-4!\System.Data.SQLite.dll  >nul 2>nul
+	)
+	Echo 替换完毕^!任意键退出.
+pause>nul
+	{% endhighlight %}
+	<p>以.bat文件的方式放在你需要生成的目录上双击运行</p>
+	<p>把文件夹中需要复制的文件就复制到了for循环的文件夹做了</p>
+	<p></p>
+	<img src="/resouse/img/pichuli/timg3.jpg">
+</div>
