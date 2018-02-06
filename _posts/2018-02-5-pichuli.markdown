@@ -43,7 +43,6 @@ categories: jekyll update
 	) else (
 	if "%%a"=="id" (
 	set "id=%%b"
-
 	set /a id=id+%%i
 	echo %%a=!id!
 	) else (
