@@ -12,7 +12,7 @@ categories: jekyll update
 	{% endhighlight %}
 	<p>以.bat文件的方式放在你需要生成的目录上双击运行</p>
 	<p>数据有规律可以用WPS表格生成下</p>
-	<h4>1.批量复制文件</h4>
+	<h4>2.批量复制文件</h4>
 	{% highlight ruby %}
 	  @Echo Off
 	Setlocal EnableDelayedExpansion
@@ -26,10 +26,36 @@ categories: jekyll update
 	Copy /Y .\1\System.Data.SQLite.dll  .\!Str:~-4!\System.Data.SQLite.dll  >nul 2>nul
 	)
 	Echo 替换完毕^!任意键退出.
-pause>nul
+	pause>nul
 	{% endhighlight %}
 	<p>以.bat文件的方式放在你需要生成的目录上双击运行</p>
-	<p>把文件夹中需要复制的文件就复制到了for循环的文件夹做了</p>
-	<p></p>
+	<p>把文件夹中需要复制的文件就复制到了for循环的文件夹中了</p>
+	<h4>3.批量修改文件内容</h4>
+	{% highlight ruby %}
+for /L %%i in (1 1 334) Do (
+@echo off&setlocal enabledelayedexpansion
+(for /f "tokens=1-2* delims==" %%a in (.\%%i\Sysconfig.ini) do (
+if "%%b"=="" (echo %%a) else (
+if "%%a"=="num" (
+set "num=%%b"
+set /a num=%%i
+echo %%a=%%i
+) else (
+if "%%a"=="id" (
+set "id=%%b"
+
+set /a id=id+%%i
+echo %%a=!id!
+) else (
+echo %%a=%%b
+)
+)
+)
+)) > #
+move # .\%%i\Sysconfig.ini
+)
+	{% endhighlight %}
+	<p>tokens=1-2* delims==是一行一行取，以‘=’划分，依次填入a，b，c...</p>
+	<p>echo 后面是换成的东西</p>
 	<img src="/resouse/img/pichuli/timg3.jpg">
 </div>
